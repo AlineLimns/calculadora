@@ -10,7 +10,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -18,18 +20,64 @@ import javafx.scene.control.Label;
  */
 public class MenuPrincipalController implements Initializable {
     
+     @FXML
+    private TextField txtNumero1;
     @FXML
-    private Label label;
-    
+    private TextField txtNumero2;
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private TextField txtResultado;
+    @FXML
+    private Button btnSoma, btnMenos, btnVezes, btnDivide;
+
+    public MenuPrincipalController() {
+        // <editor-fold defaultstate="collapsed" desc="Compiled Code">
+        /* 0: aload_0
+         * 1: invokespecial java/lang/Object."<init>":()V
+         * 4: return
+         *  */
+        // </editor-fold>
     }
-    
-    @Override
+
+    @FXML
+    private void soma(ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtNumero1.getText());
+        Double numero2 = Double.parseDouble(txtNumero2.getText());
+        Double resultado = numero1 + numero2;
+        
+        txtResultado.setText(resultado.toString());
+    }
+
+    @FXML
+    private void menos(ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtNumero1.getText());
+        Double numero2 = Double.parseDouble(txtNumero2.getText());
+        Double resultado = numero1 - numero2;
+        
+        txtResultado.setText(resultado.toString());
+    }
+
+    @FXML
+    private void vezes(ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtNumero1.getText());
+        Double numero2 = Double.parseDouble(txtNumero2.getText());
+        Double resultado = numero1 * numero2;
+        
+        txtResultado.setText(resultado.toString());
+    }
+
+    @FXML
+    private void divide(ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtNumero1.getText());
+        Double numero2 = Double.parseDouble(txtNumero2.getText());
+        Double resultado = numero1 / numero2;
+        
+        txtResultado.setText(resultado.toString());
+    }
+
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        
+    }
 }
+
+    
+
